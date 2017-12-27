@@ -35,12 +35,3 @@ from nltk.corpus import words
 import names
 import os
 import time
-import rygames.__AIFleets__
-import rygames.__AIShots__
-import rygames.CoinGame
-import rygames.CountryGuessingGame
-import rygames.Hangman
-import rygames.TicTacToe1Player
-import rygames.TicTacToe2Player
-import rygames.TwentyFortyEight
-import rygames.Warships

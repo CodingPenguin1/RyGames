@@ -1,6 +1,0 @@
-pygame
-numpy
-matplotlib
-PyDictionary
-nltk
-names

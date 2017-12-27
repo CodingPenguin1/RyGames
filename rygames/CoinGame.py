@@ -46,60 +46,61 @@ def __getWinner__(s1, s2):
     else:
         return('none')
 
-gameOver, player = False, 0
-p0Score, p1Score = 0, 0
-print('Player 1, what is your name?')
-p0Name = input()
-print('Player 2, what is your name?')
-p1Name = input()
-while gameOver == False:
+def play():
+    gameOver, player = False, 0
+    p0Score, p1Score = 0, 0
+    print('Player 1, what is your name?')
+    p0Name = input()
+    print('Player 2, what is your name?')
+    p1Name = input()
+    while gameOver == False:
+        t1s = p0Score/100
+        t2s = p1Score/100
+        print(100*'\n' + p0Name + ': $%.2f'%t1s)
+        print(p1Name + ': $%.2f'%t2s)
+        if player == 0:
+            print('\n' + p0Name + '\'s turn')
+        else:
+            print('\n' + p1Name + '\'s turn')
+        coin = __getCoin__()
+        if coin == 'quit':
+            break
+
+        scoreMod = __flipCoin__(coin)
+        if scoreMod == -1:
+            print('Tails')
+        else:
+            print('Heads')
+
+        if player == 0:
+            p0Score += scoreMod
+            if p0Score < 0:
+                p0Score = 0
+            if p0Score > 100:
+                p0Score -= scoreMod
+        elif player == 1:
+            p1Score += scoreMod
+            if p1Score < 0:
+                p1Score = 0
+            if p1Score > 100:
+                p1Score -= scoreMod
+
+        if __getWinner__(p0Score, p1Score) != 'none':
+            break
+
+        if player == 0:
+            player = 1
+        else:
+            player = 0
+
+    winner = __getWinner__(p0Score, p1Score)
+    if winner == 's1':
+        winner = p0Name
+    else:
+        winner = p1Name
+
     t1s = p0Score/100
     t2s = p1Score/100
-    print(100*'\n' + p0Name + ': $%.2f'%t1s)
+    print(100*'\n' + winner + ' wins!')
+    print(p0Name + ': $%.2f'%t1s)
     print(p1Name + ': $%.2f'%t2s)
-    if player == 0:
-        print('\n' + p0Name + '\'s turn')
-    else:
-        print('\n' + p1Name + '\'s turn')
-    coin = __getCoin__()
-    if coin == 'quit':
-        break
-    
-    scoreMod = __flipCoin__(coin)
-    if scoreMod == -1:
-        print('Tails')
-    else:
-        print('Heads')
-    
-    if player == 0:
-        p0Score += scoreMod
-        if p0Score < 0:
-            p0Score = 0
-        if p0Score > 100:
-            p0Score -= scoreMod
-    elif player == 1:
-        p1Score += scoreMod
-        if p1Score < 0:
-            p1Score = 0
-        if p1Score > 100:
-            p1Score -= scoreMod
-
-    if __getWinner__(p0Score, p1Score) != 'none':
-        break
-    
-    if player == 0:
-        player = 1
-    else:
-        player = 0
-
-winner = __getWinner__(p0Score, p1Score)
-if winner == 's1':
-    winner = p0Name
-else:
-    winner = p1Name
-
-t1s = p0Score/100
-t2s = p1Score/100
-print(100*'\n' + winner + ' wins!')
-print(p0Name + ': $%.2f'%t1s)
-print(p1Name + ': $%.2f'%t2s)

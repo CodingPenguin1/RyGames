@@ -5,10 +5,10 @@ July 2017
 '''
 import random as rand
 
-def __printBoard__(board):
+def printBoard(board):
     '''
     Prints the board
-
+    
     Parameters
     ----------
     board : list
@@ -19,8 +19,8 @@ def __printBoard__(board):
     print(board[3] + ' | ' + board[4] + ' | ' + board[5])
     print('--+---+--')
     print(board[6] + ' | ' + board[7] + ' | ' + board[8])
-
-def __findWinner__(board):
+    
+def findWinner(board):
     '''
     Parameters
     ----------
@@ -54,10 +54,10 @@ def __findWinner__(board):
     else: winner == 'Computer'
     return(winner)
 
-def __computerTurn__(difficulty):
+def computerTurn(difficulty):
     '''
     Modifies global list 'board' to take a turn
-
+    
     Parameters
     ----------
     difficulty : string
@@ -70,7 +70,7 @@ def __computerTurn__(difficulty):
             if board[move] != 'X' and board[move] != 'O':
                     board[move] = 'O'
                     validMove = True
-
+    
     elif difficulty == 'normal':
         #Check for win possibility horizontally
         if board[0] == 'O' and board[1] == 'O' and board[2] == '3':
@@ -91,7 +91,7 @@ def __computerTurn__(difficulty):
             board[6] = 'O'
         elif board[6] == 'O' and board[8] == 'O' and board[7] == '8':
             board[7] = 'O'
-
+            
         #Check for win possibility vertically
         elif board[0] == 'O' and board[3] == 'O' and board[6] == '7':
             board[6] = 'O'
@@ -111,7 +111,7 @@ def __computerTurn__(difficulty):
             board[2] = 'O'
         elif board[2] == 'O' and board[8] == 'O' and board[5] == '6':
             board[5] = 'O'
-
+        
         #Check for win possibility diagonally
         elif board[0] == 'O' and board[4] == 'O' and board[8] == '9':
             board[8] = 'O'
@@ -122,10 +122,10 @@ def __computerTurn__(difficulty):
         elif board[2] == 'O' and board[4] == 'O' and board[6] == '7':
             board[6] = 'O'
         elif board[4] == 'O' and board[6] == 'O' and board[2] == '3':
-            board[2] = 'O'
+            board[2] = 'O'  
         elif board[2] == 'O' and board[6] == 'O' and board[4] == '5':
-            board[5] = 'O'
-
+            board[5] = 'O' 
+            
         #Check to block 2 in a row horizontally
         elif board[0] == 'X' and board[1] == 'X' and board[2] == '3':
             board[2] = 'O'
@@ -145,7 +145,7 @@ def __computerTurn__(difficulty):
             board[6] = 'O'
         elif board[6] == 'X' and board[8] == 'X' and board[7] == '7':
             board[7] = 'O'
-
+        
         #Check to block 2 in a row vertically
         elif board[0] == 'X' and board[3] == 'X' and board[6] == '7':
             board[6] = 'O'
@@ -165,21 +165,21 @@ def __computerTurn__(difficulty):
             board[2] = 'O'
         elif board[2] == 'X' and board[8] == 'X' and board[5] == '6':
             board[5] = 'O'
-
+        
         #Check to block 2 in a row diagonally
         elif board[0] == 'X' and board[4] == 'X' and board[8] == '9':
             board[8] = 'O'
         elif board[4] == 'X' and board[8] == 'X' and board[0] == '1':
-            board[0] = 'O'
+            board[0] = 'O'  
         elif board[0] == 'X' and board[8] == 'X' and board[4] == '5':
-            board[4] = 'O'
+            board[4] = 'O' 
         elif board[2] == 'X' and board[4] == 'X' and board[6] == '7':
             board[6] = 'O'
         elif board[4] == 'X' and board[6] == 'X' and board[2] == '3':
-            board[2] = 'O'
+            board[2] = 'O'  
         elif board[2] == 'X' and board[6] == 'X' and board[4] == '5':
-            board[4] = 'O'
-
+            board[4] = 'O' 
+            
         else:
             while validMove == False:
                 move = rand.randint(0, 8)
@@ -206,7 +206,7 @@ def __computerTurn__(difficulty):
             board[6] = 'O'
         elif board[6] == 'O' and board[8] == 'O' and board[7] == '8':
             board[7] = 'O'
-
+            
         #Check for win possibility vertically
         elif board[0] == 'O' and board[3] == 'O' and board[6] == '7':
             board[6] = 'O'
@@ -226,7 +226,7 @@ def __computerTurn__(difficulty):
             board[2] = 'O'
         elif board[2] == 'O' and board[8] == 'O' and board[5] == '6':
             board[5] = 'O'
-
+        
         #Check for win possibility diagonally
         elif board[0] == 'O' and board[4] == 'O' and board[8] == '9':
             board[8] = 'O'
@@ -237,10 +237,10 @@ def __computerTurn__(difficulty):
         elif board[2] == 'O' and board[4] == 'O' and board[6] == '7':
             board[6] = 'O'
         elif board[4] == 'O' and board[6] == 'O' and board[2] == '3':
-            board[2] = 'O'
+            board[2] = 'O'  
         elif board[2] == 'O' and board[6] == 'O' and board[4] == '5':
-            board[5] = 'O'
-
+            board[5] = 'O' 
+            
         #Check to block 2 in a row horizontally
         elif board[0] == 'X' and board[1] == 'X' and board[2] == '3':
             board[2] = 'O'
@@ -260,7 +260,7 @@ def __computerTurn__(difficulty):
             board[6] = 'O'
         elif board[6] == 'X' and board[8] == 'X' and board[7] == '8':
             board[7] = 'O'
-
+        
         #Check to block 2 in a row vertically
         elif board[0] == 'X' and board[3] == 'X' and board[6] == '7':
             board[6] = 'O'
@@ -280,21 +280,21 @@ def __computerTurn__(difficulty):
             board[2] = 'O'
         elif board[2] == 'X' and board[8] == 'X' and board[5] == '6':
             board[5] = 'O'
-
+        
         #Check to block 2 in a row diagonally
         elif board[0] == 'X' and board[4] == 'X' and board[8] == '9':
             board[8] = 'O'
         elif board[4] == 'X' and board[8] == 'X' and board[0] == '1':
-            board[0] = 'O'
+            board[0] = 'O'  
         elif board[0] == 'X' and board[8] == 'X' and board[4] == '5':
-            board[4] = 'O'
+            board[4] = 'O' 
         elif board[2] == 'X' and board[4] == 'X' and board[6] == '7':
             board[6] = 'O'
         elif board[4] == 'X' and board[6] == 'X' and board[2] == '3':
-            board[2] = 'O'
+            board[2] = 'O'  
         elif board[2] == 'X' and board[6] == 'X' and board[4] == '5':
-            board[4] = 'O'
-
+            board[4] = 'O' 
+            
         else:
             if board[4] == '5':
                 board[4] = 'O'
@@ -317,51 +317,50 @@ def __computerTurn__(difficulty):
                     if board[move] != 'X' and board[move] != 'O':
                         board[move] = 'O'
                         break
+            
+    
+board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+legitSpace = False
 
-def play():
-    global board
-    board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    legitSpace = False
-
-    print('Enter difficulty:\nEasy Normal Hard')
-    while legitSpace == False:
-        difficulty = input()
-        difficulty = difficulty.lower()
-        if difficulty == 'easy' or difficulty == 'normal' or difficulty == 'hard':
-            break
-        else:
-            print('Please enter \'Easy\', \'Normal\', \'Hard\'')
-
-    __printBoard__(board)
-    for turnNumber in range(1, 10):
-
-        if turnNumber%2 != 0:
-            while legitSpace == False:
-                print('X turn')
-                x = input()
-                try:
-                    x = int(x)
-                except ValueError:
-                    print('', end='')
-                if isinstance(x, int) == True and x < 10 and x > 0:
-                    if board[x-1] != 'X' and board[x-1] != 'O':
-                        board[x-1] = 'X'
-                        break
-                    else:
-                        print('Can\'t go there!')
-                else:
-                    print('Enter an integer 1-9!')
-
-        elif turnNumber%2 == 0:
-            __computerTurn__(difficulty)
-
-        turnNumber += 1
-        print(100*'\n')
-        __printBoard__(board)
-        if __findWinner__(board) != 'No winner':
-            break
-    winner = __findWinner__(board)
-    if winner == 'No winner':
-        print(winner)
+print('Enter difficulty:\nEasy Normal Hard')
+while legitSpace == False:
+    difficulty = input()
+    difficulty = difficulty.lower()
+    if difficulty == 'easy' or difficulty == 'normal' or difficulty == 'hard':
+        break
     else:
-        print(winner + ' Won!')
+        print('Please enter \'Easy\', \'Normal\', \'Hard\'')
+
+printBoard(board)
+for turnNumber in range(1, 10):
+    
+    if turnNumber%2 != 0: 
+        while legitSpace == False:
+            print('X turn')
+            x = input()
+            try:
+                x = int(x)
+            except ValueError:
+                print('', end='')
+            if isinstance(x, int) == True and x < 10 and x > 0:
+                if board[x-1] != 'X' and board[x-1] != 'O':
+                    board[x-1] = 'X'
+                    break
+                else:
+                    print('Can\'t go there!')
+            else:
+                print('Enter an integer 1-9!')
+    
+    elif turnNumber%2 == 0: 
+        computerTurn(difficulty)
+
+    turnNumber += 1
+    print(100*'\n')
+    printBoard(board)
+    if findWinner(board) != 'No winner':
+        break
+winner = findWinner(board)
+if winner == 'No winner':
+    print(winner)
+else:
+    print(winner + ' Won!')
