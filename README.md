@@ -4,9 +4,9 @@ Python games by Ryan J Slater
 [GitHub](https://github.com/rjslater2000/RyGames)
 
 To install:
-`<pip install rygames>`
+`pip install rygames`
 
-#Games
+# Games
 * Coin Game
 * Country Guessing Game
 * Hangman
@@ -14,9 +14,10 @@ To install:
 * 2048
 * Warships
 
-Run any of them by importing rygames, then calling `<rygames.GAMETOPLAY.play()>`
+Run any of them by importing rygames, then calling
+`rygames.GAMETOPLAY.play()`
 
-#Requirements
+# Requirements
 * pygame >= 1.9.3
 * numpy >= 1.13.3
 * matplotlib >= 2.1.0
