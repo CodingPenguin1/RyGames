@@ -5,8 +5,8 @@ from setuptools import setup
 import os
 import sys
 
-if sys.version_info < (3, 5):
-    sys.exit('Sorry, Python < 3.5 is not supported.')
+if sys.version_info < (3, 6):
+    sys.exit('Sorry, Python < 3.6 is not supported.')
 # Utility function to read the README file.
 # Used for the long_description.  It's nice, because now 1) we have a top level
 # README file and 2) it's easier to type in the README file than to put a raw
@@ -14,32 +14,29 @@ if sys.version_info < (3, 5):
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-with open('vibration_toolbox/__init__.py', 'rb') as fid:
+with open('rygames/__init__.py', 'rb') as fid:
     for line in fid:
         line = line.decode('utf-8')
         if line.startswith('__version__'):
             version = line.strip().split()[-1][1:-1]
             break
 
-download_url = ('https://github.com/vibrationtoolbox/vibration_toolbox/\
-                blob/master/dist/vibration_toolbox-' + version + '.whl')
+download_url = ('https://github.com/rjslater2000/RyGames/\
+                blob/master/dist/rygames-' + version + '.whl')
 
 
-setup(name='vibration_toolbox',
+setup(name='RyGames',
       version=version,
-      description=('Educational code illustrating fundamentals of vibration \
-                   for engineers.'),
-      author=u'Joseph C. Slater and Raphael Timbó',
-      author_email='joseph.c.slater@gmail.com',
-      url='https://github.com/vibrationtoolbox/vibration_toolbox',
-      packages=['vibration_toolbox'],
-      package_data={'vibration_toolbox': ['../readme.rst', 'data/*.mat'],
-                    '': ['readme.rst']},
-      long_description=read('readme.rst'),
-      keywords=['vibration', 'mechanical engineering', 'civil engineering'],
-      install_requires=['numpy', 'scipy', 'matplotlib'],
-      setup_requires=['pytest-runner'],
-      tests_require=['pytest']
+      description=('Python games by Ryan J. Slater'),
+      author=u'Ryan J. Slater',
+      author_email='ryan.j.slater.2@gmail.com',
+      url='https://github.com/rjslater2000/RyGames',
+      packages=['rygames'],
+      package_data={'rygames': ['../README.md', 'data/*.mat'],
+                        '': ['README.md']},
+      long_description=read('README.md'),
+      keywords=['games', 'battleship', 'python'],
+      install_requires=['pygame', 'numpy', 'matplotlib', 'PyDictionary', 'nltk', 'names'],
       )
 
 # https://docs.python.org/3/distutils/setupscript.html#additional-meta-data

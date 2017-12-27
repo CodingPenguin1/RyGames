@@ -2,7 +2,7 @@
 # Battleship AI preset fleet positions
 # =============================================================================
 
-import random
+import random as rand
 import numpy as np
 
 def __checkValidShipPlacement__(length, coords, board):
@@ -56,15 +56,15 @@ def __getStartCoords__():
         (startCoordY, startCoordX, direction('u', 'd', 'l', 'r'))
     """
     coords = (0, 0, 'l')
-    direction = random.randint(0, 3)
+    direction = rand.randint(0, 3)
     if direction == 0:
-        coords = (random.randint(0, 9), random.randint(0, 9), 'l')
+        coords = (rand.randint(0, 9), rand.randint(0, 9), 'l')
     if direction == 1:
-        coords = (random.randint(0, 9), random.randint(0, 9), 'u')
+        coords = (rand.randint(0, 9), rand.randint(0, 9), 'u')
     if direction == 2:
-        coords = (random.randint(0, 9), random.randint(0, 9), 'r')
+        coords = (rand.randint(0, 9), rand.randint(0, 9), 'r')
     if direction == 3:
-        coords = (random.randint(0, 9), random.randint(0, 9), 'd')
+        coords = (rand.randint(0, 9), rand.randint(0, 9), 'd')
     return coords
     
 def getFleet():
