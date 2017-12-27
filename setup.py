@@ -23,7 +23,7 @@ with open('rygames/__init__.py', 'rb') as fid:
 
 download_url = ('https://github.com/rjslater2000/RyGames/\
                 blob/master/dist/rygames-' + version + '.whl')
-
+#https://github.com/rjslater2000/RyGames/archive/0.1a1.zip
 
 setup(name='RyGames',
       version=version,
