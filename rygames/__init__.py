@@ -38,4 +38,4 @@ from rygames import Hangman
 from rygames import TicTacToe1Player
 from rygames import TicTacToe2Player
 from rygames import TwentyFortyEight
-from rygames import Warships
+from rygames.Warships import Warships
