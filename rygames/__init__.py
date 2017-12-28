@@ -1,10 +1,5 @@
-"""The Vibration Toolbox, Python Edition.
-Joseph C. Slater and Raphael Timbó
-
-`import vibration_toolbox as vtb` will keep them tucked behind `vtb`
-
-`import vibration_toolbox.sdof as sdof` will tuck the sdof functions in the
- `sdof` name space.
+"""RyGames
+Ryan J. Slater
 """
 
 __title__ = 'rygames'
@@ -35,12 +30,12 @@ from nltk.corpus import words
 import names
 import os
 import time
-import rygames.__AIFleets__
-import rygames.__AIShots__
-import rygames.CoinGame
-import rygames.CountryGuessingGame
-import rygames.Hangman
-import rygames.TicTacToe1Player
-import rygames.TicTacToe2Player
-import rygames.TwentyFortyEight
-import rygames.Warships
+from rygames import __AIFleets__
+from rygames import __AIShots__
+from rygames import CoinGame
+from rygames import CountryGuessingGame
+from rygames import Hangman
+from rygames import TicTacToe1Player
+from rygames import TicTacToe2Player
+from rygames import TwentyFortyEight
+from rygames import Warships

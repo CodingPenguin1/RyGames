@@ -1,23 +1,24 @@
 # RyGames
-Python games by Ryan J Slater
-
+Python games by Ryan J Slater<br>
 [GitHub](https://github.com/rjslater2000/RyGames)
 
-To install:
+To install:<br>
 `pip install rygames`
 
-# Games
-* Coin Game
-* Country Guessing Game
+## Games
+* CoinGame
+* CountryGuessingGame
 * Hangman
-* Tic-Tac-Toe (1 and 2 player variants)
-* 2048
+* TicTacToe1Player
+* TicTacToe2Player
+* TwentyFortyEight
 * Warships
 
-Run any of them by importing rygames, then calling
-`rygames.GAMETOPLAY.play()`
+Run any of them by importing rygames, then calling<br>
+`rygames.GAMETOPLAY()`<br>
+where GAMETOPLAY is the game name, formatted exactly as in the list above
 
-# Requirements
+## Requirements
 * pygame >= 1.9.3
 * numpy >= 1.13.3
 * matplotlib >= 2.1.0

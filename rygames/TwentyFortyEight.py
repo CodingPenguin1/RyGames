@@ -406,7 +406,7 @@ def __gameLoop__():
         pygame.display.update()
         clock.tick(60)
 
-def play(dw=640, dh=480):
+def TwentyFortyEight(dw=640, dh=480):
     global displayWidth
     global displayHeight
     global pause
