@@ -5,7 +5,7 @@ Ryan J. Slater
 __title__ = 'rygames'
 # version may have no more then numerical digits after decimal point.
 # 1.11 is actually a higher release than 1.2 (confusing)
-__version__ = '0.1a3'
+__version__ = '0.1a4'
 __author__ = u'Ryan J. Slater'
 __license__ = ''
 __copyright__ = 'Copyright 2017 Ryan J. Slater'
