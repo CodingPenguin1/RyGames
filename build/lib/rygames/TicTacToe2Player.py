@@ -4,10 +4,10 @@ By Ryan Slater
 July 2017
 '''
 
-def printBoard(board):
+def __printBoard__(board):
     '''
     Prints the board
-    
+
     Parameters
     ----------
     board : list
@@ -18,8 +18,8 @@ def printBoard(board):
     print(board[3] + ' | ' + board[4] + ' | ' + board[5])
     print('--+---+--')
     print(board[6] + ' | ' + board[7] + ' | ' + board[8])
-    
-def findWinner(board):
+
+def __findWinner__(board):
     '''
     Parameters
     ----------
@@ -50,41 +50,42 @@ def findWinner(board):
     else:
         winner = 'No winner'
     return(winner)
-    
-board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-printBoard(board)
 
-for turnNumber in range(1, 10):
-    legitSpace = False
-    if turnNumber%2 != 0:
-        print('X turn')
-    else:
-        print('O turn')     
-    while legitSpace == False:
-            x = input()
-            try:
-                x = int(x)
-            except ValueError:
-                print('', end='')
-            if isinstance(x, int) == True and x < 10 and x > 0:
-                if board[x-1] != 'X' and board[x-1] != 'O':
-                    if turnNumber%2 != 0:
-                        board[x-1] = 'X'
+def play():
+    board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+    __printBoard__(board)
+
+    for turnNumber in range(1, 10):
+        legitSpace = False
+        if turnNumber%2 != 0:
+            print('X turn')
+        else:
+            print('O turn')
+        while legitSpace == False:
+                x = input()
+                try:
+                    x = int(x)
+                except ValueError:
+                    print('', end='')
+                if isinstance(x, int) == True and x < 10 and x > 0:
+                    if board[x-1] != 'X' and board[x-1] != 'O':
+                        if turnNumber%2 != 0:
+                            board[x-1] = 'X'
+                        else:
+                            board[x-1] = 'O'
+                        break
                     else:
-                        board[x-1] = 'O'
-                    break
+                        print('Can\'t go there!')
                 else:
-                    print('Can\'t go there!')
-            else:
-                print('Enter an integer 1-9!')
-    
-    turnNumber += 1
-    print(100*'\n')
-    printBoard(board)
-    if findWinner(board) != 'No winner':
-        break
-winner = findWinner(board)
-if winner == 'No winner':
-    print(winner)
-else:
-    print(winner + ' Wins!')
+                    print('Enter an integer 1-9!')
+
+        turnNumber += 1
+        print(100*'\n')
+        __printBoard__(board)
+        if __findWinner__(board) != 'No winner':
+            break
+    winner = __findWinner__(board)
+    if winner == 'No winner':
+        print(winner)
+    else:
+        print(winner + ' Wins!')
