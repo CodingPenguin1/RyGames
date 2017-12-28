@@ -1,0 +1,4 @@
+
+*.pyc
+RyGames.egg-info*
+rygames/__pycache__
