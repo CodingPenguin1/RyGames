@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: RyGames
-Version: 0.1a5
+Version: 0.1a10
 Summary: Python games by Ryan J. Slater
 Home-page: https://github.com/rjslater2000/RyGames
 Author: Ryan J. Slater
@@ -31,6 +31,15 @@ Description: # RyGames
         >>import rygames as rg
         >>rg.Warships()
         ```
+        
+        Make sure to install nltk, and run in ipython:
+        
+        ```
+        >>import nltk
+        >>nltk.download()
+        ```
+        
+        Do this to ensure that the Hangman game functions as intended.
         
         ## Requirements
         

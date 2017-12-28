@@ -23,6 +23,15 @@ Run any of them by importing `rygames`, then calling, for example:
 >>rg.Warships()
 ```
 
+Make sure to install nltk, and run in ipython:
+
+```
+>>import nltk
+>>nltk.download()
+```
+
+Do this to ensure that the Hangman game functions as intended.
+
 ## Requirements
 
 * pygame >= 1.9.3
