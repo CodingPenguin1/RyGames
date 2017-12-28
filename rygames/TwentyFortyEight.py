@@ -95,7 +95,7 @@ def __unpause__():
     pause = False
 
 def __paused__():
-    text = pygame.font.SysFont('comicsansms', titleTextSize)
+    text = pygame.font.SysFont('comicsansms', __titleTextSize__)
     TextSurf, TextRect = __text_objects__('Paused', text)
     TextRect.center = ((displayWidth/2), (displayHeight/2))
     gameDisplay.blit(TextSurf, TextRect)
@@ -117,7 +117,7 @@ def __quitGame__():
 
 def __gameIntro__():
     gameDisplay.fill(__colors__.WHITE)
-    largeText = pygame.font.SysFont('comicsansms', titleTextSize)
+    largeText = pygame.font.SysFont('comicsansms', __titleTextSize__)
     smallText = pygame.font.SysFont('comicsansms', __button__TextSize)
     TextSurf, TextRect = __text_objects__('2048', largeText)
     TextRect.center = (int(displayWidth/2), int(displayHeight/2))
@@ -140,19 +140,19 @@ def __changeRes1__():
     global displayWidth
     global displayHeight
     global __button__TextSize
-    global titleTextSize
-    titleTextSize = 77
+    global __titleTextSize__
+    __titleTextSize__ = 77
     __button__TextSize = 20
     displayWidth = 480
     displayHeight = 320
     play(displayWidth, displayHeight)
 
-def changeRes2():
+def __changeRes2__():
     global displayWidth
     global displayHeight
     global __button__TextSize
-    global titleTextSize
-    titleTextSize = 115
+    global __titleTextSize__
+    __titleTextSize__ = 115
     __button__TextSize = 30
     displayWidth = 640
     displayHeight = 480
@@ -162,8 +162,8 @@ def __changeRes3__():
     global displayWidth
     global displayHeight
     global __button__TextSize
-    global titleTextSize
-    titleTextSize = 144
+    global __titleTextSize__
+    __titleTextSize__ = 144
     __button__TextSize = 38
     displayWidth = 1024
     displayHeight = 600
@@ -173,8 +173,8 @@ def __changeRes4__():
     global displayWidth
     global displayHeight
     global __button__TextSize
-    global titleTextSize
-    titleTextSize = 216
+    global __titleTextSize__
+    __titleTextSize__ = 216
     __button__TextSize = 56
     displayWidth = 1200
     displayHeight = 900
@@ -184,8 +184,8 @@ def __changeRes5__():
     global displayWidth
     global displayHeight
     global __button__TextSize
-    global titleTextSize
-    titleTextSize = 259
+    global __titleTextSize__
+    __titleTextSize__ = 259
     __button__TextSize = 68
     displayWidth = 1920
     displayHeight = 1080
@@ -198,7 +198,7 @@ def __optionMenu__():
     global displayWidth
     global displayHeight
     gameDisplay.fill(__colors__.WHITE)
-    text = pygame.font.SysFont('comicsansms', titleTextSize)
+    text = pygame.font.SysFont('comicsansms', __titleTextSize__)
     TextSurf, TextRect = __text_objects__('Options', text)
     TextRect.center = ((displayWidth/2), int((5/48)*displayHeight))
     gameDisplay.blit(TextSurf, TextRect)
@@ -225,7 +225,7 @@ def __optionMenu__():
                 __quitGame__()
         __button__('BACK', int((1/48)*displayWidth), int((1/48)*displayHeight), __button__Width, __button__Height, __colors__.RED, __colors__.BRIGHTRED, play)
         __button__('480x320', int((displayWidth/3)-(__button__Width/2)), int((135/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, __changeRes1__)
-        __button__('640x480', int((displayWidth/3)-(__button__Width/2)), int((195/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, changeRes2)
+        __button__('640x480', int((displayWidth/3)-(__button__Width/2)), int((195/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, __changeRes2__)
         __button__('1024x600', int((displayWidth/3)-(__button__Width/2)), int((255/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, __changeRes3__)
         __button__('1200x900', int((displayWidth/3)-(__button__Width/2)), int((315/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, __changeRes4__)
         __button__('1920x1080', int((displayWidth/3)-(__button__Width/2)), int((375/480)*displayHeight), __button__Width, __button__Height, __colors__.BLUE, __colors__.BRIGHTBLUE, __changeRes5__)
@@ -301,7 +301,7 @@ def __gameLoss__():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 __quitGame__()
-        largeText = pygame.font.SysFont('comicsansms', titleTextSize)
+        largeText = pygame.font.SysFont('comicsansms', __titleTextSize__)
         TextSurf, TextRect = __text_objects__('You Lose', largeText)
         TextRect.center = ((displayWidth/2), (displayHeight/2))
         gameDisplay.blit(TextSurf, TextRect)
@@ -406,7 +406,7 @@ def __gameLoop__():
         pygame.display.update()
         clock.tick(60)
 
-def TwentyFortyEight(dw=640, dh=480):
+def play(dw=640, dh=480):
     global displayWidth
     global displayHeight
     global pause
@@ -426,5 +426,5 @@ def TwentyFortyEight(dw=640, dh=480):
     __gameLoop__()
     __quitGame__()
 
-titleTextSize = 115
+__titleTextSize__ = 115
 __button__TextSize = 30

@@ -207,7 +207,7 @@ def __getWordFromList__():
     word = word.lower()
     return(word)
 
-def Hangman():
+def play():
     dictionary = PyDictionary()
     global letters
     global word

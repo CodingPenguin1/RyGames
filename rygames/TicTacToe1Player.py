@@ -318,7 +318,7 @@ def __computerTurn__(difficulty):
                         board[move] = 'O'
                         break
 
-def TicTacToe1Player():
+def play():
     global board
     board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     legitSpace = False
