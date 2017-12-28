@@ -46,7 +46,7 @@ def __getWinner__(s1, s2):
     else:
         return('none')
 
-def play():
+def CoinGame():
     gameOver, player = False, 0
     p0Score, p1Score = 0, 0
     print('Player 1, what is your name?')

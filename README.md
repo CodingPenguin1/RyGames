@@ -20,7 +20,7 @@ Run any of them by importing `rygames`, then calling, for example:
 
 ```
 >>import rygames as rg
->>rg.Warships.play()
+>>rg.Warships()
 ```
 
 ## Requirements

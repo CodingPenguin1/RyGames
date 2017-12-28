@@ -426,5 +426,9 @@ def play(dw=640, dh=480):
     __gameLoop__()
     __quitGame__()
 
-__titleTextSize__ = 115
-__button__TextSize = 30
+def TwentyFortyEight():
+    global __titleTextSize__
+    global __button__TextSize
+    __titleTextSize__ = 115
+    __button__TextSize = 30
+    play()

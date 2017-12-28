@@ -5,7 +5,7 @@ Ryan J. Slater
 __title__ = 'rygames'
 # version may have no more then numerical digits after decimal point.
 # 1.11 is actually a higher release than 1.2 (confusing)
-__version__ = '0.1a3'
+__version__ = '0.1a5'
 __author__ = u'Ryan J. Slater'
 __license__ = ''
 __copyright__ = 'Copyright 2017 Ryan J. Slater'
@@ -32,10 +32,10 @@ import os
 import time
 from rygames import __AIFleets__
 from rygames import __AIShots__
-from rygames import CoinGame
-from rygames import CountryGuessingGame
-from rygames import Hangman
-from rygames import TicTacToe1Player
-from rygames import TicTacToe2Player
-from rygames import TwentyFortyEight
-from rygames import Warships
+from rygames.CoinGame import CoinGame
+from rygames.CountryGuessingGame import CountryGuessingGame
+from rygames.Hangman import Hangman
+from rygames.TicTacToe1Player import TicTacToe1Player
+from rygames.TicTacToe2Player import TicTacToe2Player
+from rygames.TwentyFortyEight import TwentyFortyEight
+from rygames.Warships import Warships

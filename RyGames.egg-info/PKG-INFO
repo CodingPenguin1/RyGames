@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: RyGames
-Version: 0.1a4
+Version: 0.1a5
 Summary: Python games by Ryan J. Slater
 Home-page: https://github.com/rjslater2000/RyGames
 Author: Ryan J. Slater
@@ -29,7 +29,7 @@ Description: # RyGames
         
         ```
         >>import rygames as rg
-        >>rg.Warships.play()
+        >>rg.Warships()
         ```
         
         ## Requirements
