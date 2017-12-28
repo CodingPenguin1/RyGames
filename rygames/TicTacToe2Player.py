@@ -51,7 +51,7 @@ def __findWinner__(board):
         winner = 'No winner'
     return(winner)
 
-def TicTacToe2Player():
+def play():
     board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     __printBoard__(board)
 

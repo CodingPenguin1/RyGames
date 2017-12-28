@@ -8,10 +8,10 @@ import numpy as np
 def __checkValidShipPlacement__(length, coords, board):
     """
     Checks if a requested ship placement is valid
-    
+
     Parameters
     -------------------
-    
+
     length: int
         Length of ship
     coords: tuple (int, int, str)
@@ -48,10 +48,10 @@ def __checkValidShipPlacement__(length, coords, board):
 def __getStartCoords__():
     """
     Creates random start coordinates for a ship
-    
+
     Returns
     -------------------
-    
+
     coords: tuple (int, int, str)
         (startCoordY, startCoordX, direction('u', 'd', 'l', 'r'))
     """
@@ -66,14 +66,14 @@ def __getStartCoords__():
     if direction == 3:
         coords = (rand.randint(0, 9), rand.randint(0, 9), 'd')
     return coords
-    
+
 def getFleet():
     """
     Creates a random fleet
-    
+
     Returns
     -------------------
-    
+
     board: Numpy array[10][10]
         Board holding a randomly generated fleet
     """
@@ -87,7 +87,7 @@ def getFleet():
                       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
                       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
                       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']])
-    
+
     #Carrier
     coords = __getStartCoords__()
     while __checkValidShipPlacement__(5, coords, board) == False:
@@ -104,7 +104,7 @@ def getFleet():
     elif coords[2] == 'd':
         for i in range(5):
             board[coords[0]+i][coords[1]] = 'C'
-            
+
     #Battleship
     coords = __getStartCoords__()
     while __checkValidShipPlacement__(4, coords, board) == False:
@@ -121,7 +121,7 @@ def getFleet():
     elif coords[2] == 'd':
         for i in range(4):
             board[coords[0]+i][coords[1]] = 'B'
-            
+
     #Cruiser
     coords = __getStartCoords__()
     while __checkValidShipPlacement__(3, coords, board) == False:
@@ -138,7 +138,7 @@ def getFleet():
     elif coords[2] == 'd':
         for i in range(3):
             board[coords[0]+i][coords[1]] = 'R'
-            
+
     #Submarine
     coords = __getStartCoords__()
     while __checkValidShipPlacement__(3, coords, board) == False:
@@ -155,7 +155,7 @@ def getFleet():
     elif coords[2] == 'd':
         for i in range(3):
             board[coords[0]+i][coords[1]] = 'S'
-            
+
     #Destroyer
     coords = __getStartCoords__()
     while __checkValidShipPlacement__(2, coords, board) == False:

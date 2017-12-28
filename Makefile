@@ -45,19 +45,12 @@ cover: clean
 
 release: clean
 	pip install --user readme_renderer
-	#python setup.py check -r -s
-	# pytest
-	#python setup.py register
 	rm -rf dist
 	python setup.py bdist_wheel
-	# python setup.py sdist
 	git tag v$(VERSION)
 	git push origin --all
 	git push origin --tags
-#	printf '\nUpgrade vibration toolbox with release and sha256 sum:'
-#	printf '\nOK, no sha256 sum yet:'
-	twine upload dist/*
-#	shasum -a 256 dist/*.tar.gz
+	python setup.py sdist upload -r pypi
 
 wheel:
 	rm -rf dist
