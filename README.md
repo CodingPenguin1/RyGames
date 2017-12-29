@@ -30,6 +30,20 @@ Make sure to install nltk, and run in ipython:
 >>nltk.download()
 ```
 
+and:<br>
+Change Here: /python3.6/site-packages/bs4/__init__.py, see end of file (last few lines)<br>
+Change: soup = BeautifulSoup(sys.stdin) to soup = BeautifulSoup(sys.stdin, "html.parser")<br>
+Then comment out the warning
+
+```
+#warnings.warn(self.NO_PARSER_SPECIFIED_WARNING % dict(
+        #    filename=filename,
+        #    line_number=line_number,
+        #    parser=builder.NAME,
+        #    markup_type=markup_type))
+```
+
+Save and close<br>
 Do this to ensure that the Hangman game functions as intended.
 
 ## Requirements
