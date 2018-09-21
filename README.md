@@ -3,6 +3,8 @@
 Python games by Ryan J Slater<br>
 [GitHub](https://github.com/rjslater2000/RyGames)
 
+Note: this repository has been replaced by [SlaterPythonGames](https://github.com/rjslater2000/SlaterPythonGames)
+
 To install:<br>
 `pip install rygames`
 
